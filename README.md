@@ -56,7 +56,10 @@ dsh plugin --profile desktop add git+https://github.com/NightmareAway/dsh-update
 
 ### 离线 tgz 安装
 
-本包没有运行时依赖，打成一个 tgz 就能拷到别的 DSH 上装。，打成一个 tgz 就能拷到别的 DSH 上装。**不要用目录路径（`link:`）安装**：卸载/更新 `link:` 依赖时 pnpm 会清空被链接的源目录（本机实测过一次）。
+不打 Git 也能装：从 [Releases](https://github.com/NightmareAway/dsh-update-center/releases) 下载现成的 .tgz（打 * 标签会自动构建并附到 Release），或者本地 
+pm pack 打一个。本包没有运行时依赖，tgz 拷到别的 DSH 上即可安装。
+
+> git+https:// 安装需要目标机器 PATH 上有 git；没有 Git 的机器用 tgz 更省事。，打成一个 tgz 就能拷到别的 DSH 上装。**不要用目录路径（`link:`）安装**：卸载/更新 `link:` 依赖时 pnpm 会清空被链接的源目录（本机实测过一次）。
 
 ```powershell
 # 在一台机器上打包（产物 ~14 KB）
