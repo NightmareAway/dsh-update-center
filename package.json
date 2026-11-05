@@ -30,6 +30,22 @@
       "inject": []
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NightmareAway/dsh-update-center.git"
+  },
+  "homepage": "https://github.com/NightmareAway/dsh-update-center#readme",
+  "bugs": {
+    "url": "https://github.com/NightmareAway/dsh-update-center/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis-plugin",
+    "update-checker"
+  ],
+  "author": "NightmareAway",
   "icon": "icon.svg",
   "license": "MIT"
 }
+

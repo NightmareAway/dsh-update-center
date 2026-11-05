@@ -40,7 +40,23 @@ icon.svg
 
 ## 分发到其他机器
 
-本包没有运行时依赖，打成一个 tgz 就能拷到别的 DSH 上装。**不要用目录路径（`link:`）安装**：卸载/更新 `link:` 依赖时 pnpm 会清空被链接的源目录（本机实测过一次）。
+仓库：<https://github.com/NightmareAway/dsh-update-center>
+
+### 从 GitHub 安装（同步开发的首选）
+
+```powershell
+# 有 dsh CLI 时
+dsh plugin --profile desktop add git+https://github.com/NightmareAway/dsh-update-center.git
+
+# 或者让 DSH 里的 agent 装：
+# plugin_manager install_bundle "git+https://github.com/NightmareAway/dsh-update-center.git"
+```
+
+改了仓库之后，在目标机器上再执行一次上面的 add（装的是当时的最新提交）；想锁版本就带上提交号：git+https://github.com/NightmareAway/dsh-update-center.git#<commit>。
+
+### 离线 tgz 安装
+
+本包没有运行时依赖，打成一个 tgz 就能拷到别的 DSH 上装。，打成一个 tgz 就能拷到别的 DSH 上装。**不要用目录路径（`link:`）安装**：卸载/更新 `link:` 依赖时 pnpm 会清空被链接的源目录（本机实测过一次）。
 
 ```powershell
 # 在一台机器上打包（产物 ~14 KB）
@@ -65,4 +81,5 @@ npm pack --pack-destination <输出目录>      # => dsh-update-center-1.0.0.tgz
 - 只处理"profile 直接依赖 + 来自 registry"的 bundle：`file:`/`link:`/`git:`/`workspace:`、官方 `@deepseek-ai/*`、以及不可移除的 bundle 不参与。
 - 更新会重载插件，可能中断正在跑的会话/工具；host 半有代码变化的更新需要重启 DSH 才生效（Client 半刷新页面即可）。
 - 桌面客户端更新只在 Electron 主窗口里可用；普通浏览器里该区块显示"当前不在桌面客户端内"。
+
 
