@@ -1,0 +1,7 @@
+- insert:
+    - id: update-center
+      name: dsh-update-center
+      config:
+        autoCheck: true
+        intervalMs: 21600000
+        initialDelayMs: 30000

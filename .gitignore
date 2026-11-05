@@ -1,0 +1,11 @@
+# dependencies / build output
+node_modules/
+dist/
+*.tgz
+
+# editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

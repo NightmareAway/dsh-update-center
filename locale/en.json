@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Update Center",
+    "description": "Checks installed plugins and the desktop client for newer releases and installs them from one entry at the sidebar foot."
+  }
+}
